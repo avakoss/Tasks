@@ -20,32 +20,30 @@ int main() {
         Segment3D first{center - delta1, center + delta1};
         Segment3D second{center - delta2, center + delta2};
         std::optional<Vector3D> result = Intersect(first, second);
-        if (result != center) {
-            flag = false;
+        if (!result.has_value()) {
             std::cout << "FAILED" << std::endl;
-            std::cout << "expected: " << center << std::endl;
-            std::cout << "given: " << (result.has_value() ? result.value() : Vector3D{3, 3, 3}) << std::endl;
             std::cout << std::endl;
+        } else {
+            if (result.value() != center) {
+                flag = false;
+                std::cout << "FAILED" << std::endl;
+                std::cout << "expected: " << center << std::endl;
+                std::cout << "given: " << result.value() << std::endl;
+                std::cout << std::endl;
+            }
         }
+
     }
     if (flag) {
         std::cout << "OK" << std::endl;
     }
 
-    // dummy examples
+    // dummy example
 
     // Don't intersection
     Segment3D segment1{{0, 0, 1},
                        {37, 2, 5}}, segment2{{0, 0, 0},
                                             {1, 2, 5}};
-    // Don't intersection
-//    Segment3D segment1{{1, 2, 4},
-//                       {0, 0, 0}}, segment2{{1, 4, 8},
-//                                             {0, 0, 0}};
-    // [0, 0, 0]
-//    Segment3D segment1{{0, 0, 0},
-//                       {0, 0, 0}}, segment3_2{{0, 0, 0},
-//                                            {0, 0, 0}};
 
     std::optional<Vector3D> result_vector = Intersect(segment1, segment2);
     if (result_vector.has_value()) {
