@@ -1,3 +1,0 @@
-C:/Users/Aleksandra/CLionProjects/LedasTest/lab1_stub/geometry/cmake-build-debug/CMakeFiles/LedasTest.dir
-C:/Users/Aleksandra/CLionProjects/LedasTest/lab1_stub/geometry/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Aleksandra/CLionProjects/LedasTest/lab1_stub/geometry/cmake-build-debug/CMakeFiles/rebuild_cache.dir
