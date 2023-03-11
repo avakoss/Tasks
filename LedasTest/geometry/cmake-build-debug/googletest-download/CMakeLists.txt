@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.1)
+
+project(googletest-download NONE)
+
+include(ExternalProject)
+ExternalProject_Add(googletest
+  GIT_REPOSITORY    https://github.com/google/googletest.git
+  GIT_TAG           main
+  SOURCE_DIR        "C:/Users/Aleksandra/CLionProjects/LedasTest/lab1_stub/geometry/cmake-build-debug/googletest-src"
+  BINARY_DIR        "C:/Users/Aleksandra/CLionProjects/LedasTest/lab1_stub/geometry/cmake-build-debug/googletest-build"
+  CONFIGURE_COMMAND ""
+  BUILD_COMMAND     ""
+  INSTALL_COMMAND   ""
+  TEST_COMMAND      ""
+)
+
